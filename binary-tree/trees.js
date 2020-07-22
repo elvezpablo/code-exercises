@@ -18,5 +18,6 @@ class BST {
       this.root = new TreeNode(value);
       return;
     }
+    if()
   }
 }

@@ -11,3 +11,7 @@ Some notes about solving tree problems:
 1. Trees and their nodes are often represented as Classes.
 2. The solution to tree problems can often be solved with recursion
 3. There is a pitfall of size with large recursive trees in that they can lead to memory overflows. In which case an iterative approach can be used.
+
+- https://medium.com/javarevisited/20-binary-tree-algorithms-problems-from-coding-interviews-c5e5a384df30
+- https://codeburst.io/100-coding-interview-questions-for-programmers-b1cf74885fb7
+- https://www.digitalocean.com/community/tutorials/js-binary-search-trees
