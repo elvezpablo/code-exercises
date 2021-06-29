@@ -1,0 +1,132 @@
+var MyCircularDeque = function (k) {
+  this.size = k;
+  this.length = 0;
+  this.front = 0;
+  this.q = {};
+};
+
+/**
+ * Adds an item at the front of Deque. Return true if the operation is successful.
+ * @param {number} value
+ * @return {boolean}
+ */
+MyCircularDeque.prototype.insertFront = function (value) {
+  if (this.isFull()) {
+    return false;
+  }
+  this.front = this.front === 0 ? this.size - 1 : this.front - 1;
+  this.q[this.front % this.size] = value;
+  this.length++;
+  return true;
+};
+
+/**
+ * Adds an item at the rear of Deque. Return true if the operation is successful.
+ * @param {number} value
+ * @return {boolean}
+ */
+MyCircularDeque.prototype.insertLast = function (value) {
+  if (this.isFull()) {
+    return false;
+  }
+
+  const nextLast = this.front + this.length;
+    
+  this.q[nextLast % this.size] = value;
+  this.length++;
+  return true;
+};
+
+/**
+ * Deletes an item from the front of Deque. Return true if the operation is successful.
+ * @return {boolean}
+ */
+MyCircularDeque.prototype.deleteFront = function () {
+  if (this.isEmpty()) {
+    return false;
+  }
+
+  this.q[this.front % this.size] = null;
+  this.front = this.front === this.size - 1 ? 0 : this.front + 1;
+  this.length--;
+  return true;
+};
+
+/**
+ * Deletes an item from the rear of Deque. Return true if the operation is successful.
+ * @return {boolean}
+ */
+MyCircularDeque.prototype.deleteLast = function () {
+  if (this.isEmpty()) {
+    return false;
+  }
+  const last = this.front + this.length - 1;
+  this.q[last % this.size] = null;
+  this.length--;
+  return true;
+};
+
+/**
+ * Get the front item from the deque.
+ * @return {number}
+ */
+MyCircularDeque.prototype.getFront = function () {
+  if (this.isEmpty()) {
+    return -1;
+  }
+  return this.q[this.front % this.size];
+};
+
+/**
+ * Get the last item from the deque.
+ * @return {number}
+ */
+MyCircularDeque.prototype.getRear = function () {
+  if (this.isEmpty()) {
+    return -1;
+  }
+  console.log(this);
+  return this.q[(this.front + this.length - 1) % this.size];
+};
+
+/**
+ * Checks whether the circular deque is empty or not.
+ * @return {boolean}
+ */
+MyCircularDeque.prototype.isEmpty = function () {
+  return this.length === 0;
+};
+
+/**
+ * Checks whether the circular deque is full or not.
+ * @return {boolean}
+ */
+MyCircularDeque.prototype.isFull = function () {
+  return this.size === this.length;
+};
+
+const circularDeque = new MyCircularDeque(2); // set the size to be 3
+circularDeque.insertFront(7);
+circularDeque.deleteLast();
+circularDeque.getFront();
+circularDeque.insertLast(5);
+console.log(circularDeque);
+circularDeque.insertFront(0);
+circularDeque.getFront();
+circularDeque.getRear();
+
+// circularDeque.insertFront(9); // true
+// circularDeque.getRear(); // 9
+// circularDeque.insertFront(9); // true
+// circularDeque.getRear(); // 9
+// circularDeque.insertLast(5); // true
+// circularDeque.getFront(); // 9
+// circularDeque.getRear(); // 5
+// circularDeque.getFront(); // 9
+// circularDeque.insertLast(8); // false
+// circularDeque.deleteLast(); //  true
+// circularDeque.getFront(); // 9
+// circularDeque.deleteLast(); //  true
+// circularDeque.getRear(); // 9
+// circularDeque.deleteLast(); //  true
+// circularDeque.getRear(); // 5

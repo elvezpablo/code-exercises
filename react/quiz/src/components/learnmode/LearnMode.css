@@ -1,0 +1,47 @@
+.LearnMode {    
+    border: 1px solid cornflowerblue;
+    border-radius: .25rem;
+    margin-top: 20px;
+    background-color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .LearnMode-prompt {
+    margin: 0 0 16px;
+    background-color: rgba(200,200,200, .5);
+    padding: 20px;    
+    text-align: center;
+  }
+
+  .LearnMode-body {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .LearnMode-input {
+    border-radius: 2px;
+    border: 2px solid #d9dfe2;
+    display: inline-block;
+    font-size: 15px;
+    line-height: 1rem;
+    margin-right: 5px;
+    outline: 0 none;
+    padding: 8px;
+    resize: none;
+  }
+  
+  .LearnMode-submit {
+    background: #1f6fd9;
+    border-radius: 2px;
+    border: 1px solid #1d66c8;
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    height: 36px;
+    line-height: 1rem;
+    outline: 0 none;
+    padding: 0 20px;
+    text-align: center;
+  }
+  
