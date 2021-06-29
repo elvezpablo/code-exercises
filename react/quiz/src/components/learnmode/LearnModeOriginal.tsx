@@ -7,14 +7,13 @@ import "./LearnMode.css";
 // for an empty string show the correct answer and prompt the user to copy the correct answer
 // after 1 second of typing input submit the value
 
-type LearnModeUIProps = {
-    handleSubmit: () => void;
-    handleChange: (value: string) => void;
-    prompt: string;
-    message: string;
+type Term = {
+    id: number,
+    word: string,
+    definition: string
 }
 
-export default function LearnMode(props: LearnModeUIProps) {
+export default function LearnMode({ terms }: { terms: Term[] }) {
     const [query, setQuery] = useState("");
     const [success, setSuccess] = useState(false);
     const [errorMsg, setErrorMsg] = useState("Not Correct");

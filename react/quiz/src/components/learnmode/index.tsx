@@ -1,3 +1,3 @@
-import LearnMode from "./LearnMode";
+import LearnModeState from "./LearnModeState";
 
-export default LearnMode;
+export default LearnModeState;

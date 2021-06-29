@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styled, { createGlobalStyle } from "styled-components";
 import { Button, OutlineButton, ButtonRow } from './components/Buttons';
 import terms from './data/terms.json'
-import LearnMode from "./components/learnmode/LearnMode";
+import LearnMode from "./components/learnmode/";
 
 // https://styled-components.com/docs/api#createglobalstyle
 const GlobalStyle = createGlobalStyle`
